@@ -8,4 +8,13 @@
         android:layout_height="wrap_content"
         android:text="New Entries  Fragment" />
 
+    <Button
+        android:id="@+id/mood_btn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimaryDark"
+        android:text="Mood" />
+
 </RelativeLayout>
