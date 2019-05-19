@@ -23,6 +23,16 @@ public class NewEntryFrag extends Fragment {
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), MoodPicker.class);
                 startActivity(i);
+
+            }
+        });
+        Button btnEntry = (Button) v.findViewById(R.id.entry_btn);
+        btnEntry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), CreateEntry.class);
+                startActivity(i);
+
             }
         });
         return v;
