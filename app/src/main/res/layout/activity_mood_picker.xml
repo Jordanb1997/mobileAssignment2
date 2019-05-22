@@ -14,4 +14,15 @@
         android:text="Mood Picker"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:fontFamily="sans-serif-condensed" />
+
+    <ListView
+        android:id="@+id/emoji_list"
+        android:layout_width="match_parent"
+        android:layout_height="529dp" />
+
+    <Button
+        android:id="@+id/mood_done"
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:text="Done" />
 </LinearLayout>
