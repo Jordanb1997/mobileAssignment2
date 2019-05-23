@@ -41,7 +41,8 @@
             android:layout_height="629dp"
             android:gravity="top|left"
             android:hint="Enter Text"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:background="@android:color/holo_blue_light"/>
     </FrameLayout>
 
     <FrameLayout
@@ -49,28 +50,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/journal_entry_container"
-        android:layout_marginTop="-55dp">
+        android:layout_marginTop="-55dp"
+        android:background="@android:color/holo_red_dark">
 
         <Button
             android:id="@+id/journal_done_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="117dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Done" />
 
         <Button
             android:id="@+id/journal_gallery_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:text="Gallery" />
 
         <Button
             android:id="@+id/journal_camera_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:text="CAmera" />
+            android:text="Camera" />
 
 
     </FrameLayout>
