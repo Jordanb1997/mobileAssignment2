@@ -10,6 +10,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,
                 new EntriesFrag()).commit();
+
+        Entry entry1 = new Entry();
+        entry1.setTitle("hello world");
+        entry1.setDate(11021968);
+        entry1.setMood("sad");
+        entry1.setText("yeet");
+        entry1.setImage("doge.png");
+
+        EntryTable.insert(db, entry1);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

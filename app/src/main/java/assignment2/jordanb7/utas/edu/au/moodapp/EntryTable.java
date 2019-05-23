@@ -21,7 +21,6 @@ public class EntryTable {
             + KEY_TEXT + " string not null, "
             + KEY_IMAGE + " string not null "
             +");";
-
     public static void insert(SQLiteDatabase db, Entry e)
     {
         ContentValues values = new ContentValues();
