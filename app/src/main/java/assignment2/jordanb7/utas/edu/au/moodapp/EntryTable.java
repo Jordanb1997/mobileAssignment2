@@ -1,5 +1,8 @@
 package assignment2.jordanb7.utas.edu.au.moodapp;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
+
 public class EntryTable {
     public static final String TABLE_NAME = "entries";
     public static final String KEY_ENTRY_ID = "entry_id";
@@ -19,4 +22,14 @@ public class EntryTable {
             + KEY_IMAGE + " string not null "
             +");";
 
+    public static void insert(SQLiteDatabase db, Entry e)
+    {
+        ContentValues values = new ContentValues();
+        values.put(KEY_TITLE, e.getTitle());
+        values.put(KEY_DATE, e.getDate());
+        values.put(KEY_MOOD, e.getMood());
+        values.put(KEY_TEXT, e.getText());
+        values.put(KEY_IMAGE, e.getImage());
+        db.insert(TABLE_NAME, null, values);
+    }
 }

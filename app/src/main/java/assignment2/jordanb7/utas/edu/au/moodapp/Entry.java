@@ -8,21 +8,21 @@ public class Entry {
     private String mText;
     private String mImage;
 
-    public int getmEntryID() { return mEntryID; }
-    public void setmEntryID(int s) { this.mEntryID = s; }
+    public int getEntryID() { return mEntryID; }
+    public void setEntryID(int s) { this.mEntryID = s; }
 
-    public String getmTitle() { return mTitle; }
-    public void setmTitle(String s) { this.mTitle= s; }
+    public String getTitle() { return mTitle; }
+    public void setTitle(String s) { this.mTitle= s; }
 
-    public int getmDate() { return mDate; }
-    public void setmDate(int s) { this.mDate= s; }
+    public int getDate() { return mDate; }
+    public void setDate(int s) { this.mDate= s; }
 
-    public String getmMood() { return mMood; }
-    public void setmMood(String s) { this.mMood= s; }
+    public String getMood() { return mMood; }
+    public void setMood(String s) { this.mMood= s; }
 
-    public String getmText() { return mText; }
-    public void setmText(String s) { this.mText= s; }
+    public String getText() { return mText; }
+    public void setText(String s) { this.mText= s; }
 
-    public String getmImage() { return mImage; }
-    public void setmImage(String s) { this.mImage= s; }
+    public String getImage() { return mImage; }
+    public void setImage(String s) { this.mImage= s; }
 }
