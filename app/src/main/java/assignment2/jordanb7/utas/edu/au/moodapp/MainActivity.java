@@ -1,5 +1,6 @@
 package assignment2.jordanb7.utas.edu.au.moodapp;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -13,6 +14,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Database databaseConnection = new Database(this);
+        final SQLiteDatabase db = databaseConnection.open();
 
         BottomNavigationView btmNav = findViewById(R.id.bottom_nav);
         btmNav.setOnNavigationItemSelectedListener(navListener);
