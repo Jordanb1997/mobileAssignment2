@@ -14,8 +14,8 @@ public class EntryTable {
             + " (" + KEY_ENTRY_ID + " integer primary key autoincrement, "
             + KEY_TITLE + " string not null, "
             + KEY_DATE + " int not null, "
-            + KEY_MOOD + " string not null "
-            + KEY_TEXT + " string not null "
+            + KEY_MOOD + " string not null, "
+            + KEY_TEXT + " string not null, "
             + KEY_IMAGE + " string not null "
             +");";
 

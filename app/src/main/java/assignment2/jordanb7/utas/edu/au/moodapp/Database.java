@@ -55,17 +55,16 @@ public class Database {
             // which does the actual work of opening the database.
             Log.d(TAG, "DatabaseHelper onCreate");
 
-            //--- ADD YOUR CREATE TABLE FUNCTIONS HERE ---
+            db.execSQL(EntryTable.CREATE_STATEMENT);
 
         }
 
         //This code is called if the version number changes
         @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
-        {
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             Log.d(TAG, "DatabaseHelper onUpgrade");
-
-            //--- ADD YOUR DROP TABLE FUNCTIONS HERE (migration logic not required for this unit)---
+            db.execSQL("DROP TABLE IF EXISTS " + EntryTable.TABLE_NAME);
+            onCreate(db); //this will recreate the database as if it were new
         }
     }
 }
