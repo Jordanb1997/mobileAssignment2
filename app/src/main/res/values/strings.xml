@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">moodapp</string>
+    <string name="title_activity_create_entry">createEntry</string>
+
+    <string-array name="emoji">
+        <item>Happy</item>
+        <item>Angry</item>
+        <item>Sad</item>
+        <item>Delighted</item>
+        <item>Worried</item>
+        <item>Okay</item>
+    </string-array>
+</resources>
