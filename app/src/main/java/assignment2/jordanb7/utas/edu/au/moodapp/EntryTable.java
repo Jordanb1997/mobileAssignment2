@@ -14,24 +14,7 @@ public class EntryTable {
     public static final String KEY_MOOD = "mood";
     public static final String KEY_TEXT = "text";
     public static final String KEY_IMAGE = "image";
-    public static Entry createFromCursor(Cursor c)
-    {
-        if (c == null || c.isAfterLast() || c.isBeforeFirst())
-        {
-            return null;
-        }
-        else
-        {
-            Entry e = new Entry();
-            e.setEntryID(c.getInt(c.getColumnIndex(KEY_ENTRY_ID)));
-            e.setTitle(c.getString(c.getColumnIndex(KEY_TITLE)));
-            e.setDate(c.getInt(c.getColumnIndex(KEY_DATE)));
-            e.setMood(c.getString(c.getColumnIndex(KEY_MOOD)));
-            e.setText(c.getString(c.getColumnIndex(KEY_TEXT)));
-            e.setImage(c.getString(c.getColumnIndex(KEY_IMAGE)));
-            return e;
-        }
-    }
+
     public static final String CREATE_STATEMENT = "CREATE TABLE "
             + TABLE_NAME
             + " (" + KEY_ENTRY_ID + " integer primary key autoincrement, "
