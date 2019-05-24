@@ -1,2 +1,0 @@
-# mobileAssignment2
-yeet
