@@ -19,14 +19,15 @@
             android:hint="Enter Title"
             android:inputType="text" />
 
-        <EditText
-            android:id="@+id/journal_date_input"
-            android:layout_width="163dp"
-            android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/date_picker_btn"
+            android:layout_width="106dp"
+            android:layout_height="match_parent"
             android:layout_gravity="right"
-            android:gravity="right|top"
-            android:hint="Enter Date"
-            android:inputType="date"/>
+            android:gravity="center"
+            android:text="Date" />
+
+
     </FrameLayout>
 
     <FrameLayout

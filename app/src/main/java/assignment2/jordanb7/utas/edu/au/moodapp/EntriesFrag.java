@@ -13,10 +13,11 @@ public class EntriesFrag extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View fragView = inflater.inflate(R.layout.frag_entries,container,false);
 
-        //TextView lblTitle = findViewById(R.id.lblEnteredText);
 
 
-        return inflater.inflate(R.layout.frag_entries,container,false);
+
+        return fragView;
     }
 }
