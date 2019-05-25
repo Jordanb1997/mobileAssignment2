@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
@@ -28,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,
                 new EntriesFrag()).commit();
 
-
-       // final ArrayList<Entry> properties = EntryTable.selectAll(db);
-
         Entry entry1 = new Entry();
         entry1.setTitle("hello world");
         entry1.setDate(11021968);
@@ -39,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
         entry1.setImage("doge.png");
 
         EntryTable.insert(db, entry1);
+
+        final ArrayList<Entry> entries = EntryTable.selectAll(db);
+
+
+        for(int i = 0; i < entries.size(); i++)
+        {
+            Entry p = entries.get(i);
+            Log.d("sam", p.getEntryID() + ":" + p.getTitle());
+        }
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
