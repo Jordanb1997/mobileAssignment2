@@ -17,7 +17,7 @@ public class EntriesFrag extends Fragment {
 
 
 
-
         return fragView;
     }
+
 }

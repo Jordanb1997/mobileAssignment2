@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -46,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
             Entry p = entries.get(i);
             Log.d("sam", p.getEntryID() + ":" + p.getTitle());
         }
+
+        ListView entriesList = findViewById(R.id.entriesList);
+        final EntryAdapter EntryListAdapter =
+                new EntryAdapter(getApplicationContext(),
+                        android.R.layout.simple_list_item_1, entries);
+        entriesList.setAdapter(EntryListAdapter);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
