@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class EntryAdapter extends ArrayAdapter {
+public class EntryAdapter extends ArrayAdapter<Entry> {
     private int mLayoutResourceID;
     public EntryAdapter (Context context, int resource, List<Entry> objects)
     {
@@ -25,11 +25,12 @@ public class EntryAdapter extends ArrayAdapter {
 
         LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
-
+        
         Entry p = this.getItem(position);
         TextView textView = row.findViewById(android.R.id.text1);
         textView.setText(p.getEntryID()+": "+p.getDate());
         return row;
 
     }
+
 }
