@@ -31,6 +31,7 @@ public class EntryAdapter extends ArrayAdapter<Entry> {
         textView.setText(p.getEntryID());
         return row;
 
+
     }
 
 }
