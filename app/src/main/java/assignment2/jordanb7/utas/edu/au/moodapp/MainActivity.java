@@ -38,9 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
         EntryTable.insert(db, entry1);
 
+
         final ArrayList<Entry> entries = EntryTable.selectAll(db);
-
-
         for(int i = 0; i < entries.size(); i++)
         {
             Entry p = entries.get(i);
@@ -48,9 +47,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         ListView entriesList = findViewById(R.id.entriesList);
-        final EntryAdapter EntryListAdapter =
-                new EntryAdapter(getApplicationContext(),
-                        android.R.layout.simple_list_item_1, entries);
+        EntryAdapter EntryListAdapter = new EntryAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, entries);
         entriesList.setAdapter(EntryListAdapter);
     }
 

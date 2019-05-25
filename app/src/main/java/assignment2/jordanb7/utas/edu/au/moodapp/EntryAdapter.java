@@ -25,10 +25,10 @@ public class EntryAdapter extends ArrayAdapter<Entry> {
 
         LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
-        
+
         Entry p = this.getItem(position);
         TextView textView = row.findViewById(android.R.id.text1);
-        textView.setText(p.getEntryID()+": "+p.getDate());
+        textView.setText(p.getEntryID());
         return row;
 
     }
