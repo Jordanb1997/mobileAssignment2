@@ -1,7 +1,10 @@
 package assignment2.jordanb7.utas.edu.au.moodapp;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
 
 public class EntryTable {
     public static final String TABLE_NAME = "entries";
@@ -11,6 +14,24 @@ public class EntryTable {
     public static final String KEY_MOOD = "mood";
     public static final String KEY_TEXT = "text";
     public static final String KEY_IMAGE = "image";
+
+
+    public static Entry createFromCursor(Cursor c)
+    {
+        if (c == null || c.isAfterLast() || c.isBeforeFirst())
+        {
+            return null;
+        }
+        else
+        {
+           Entry p = new Entry();
+            p.setEntryID(c.getInt(c.getColumnIndex(KEY_ENTRY_ID)));
+            p.setTitle(c.getString(c.getColumnIndex(KEY_TITLE)));
+            p.setDate(c.getInt(c.getColumnIndex(KEY_DATE)));
+           // p.setMood(c.getInt(c.getColumnIndex(KEY_MOOD)));
+            return p;
+        }
+    }
 
     public static final String CREATE_STATEMENT = "CREATE TABLE "
             + TABLE_NAME
@@ -30,5 +51,30 @@ public class EntryTable {
         values.put(KEY_TEXT, e.getText());
         values.put(KEY_IMAGE, e.getImage());
         db.insert(TABLE_NAME, null, values);
+    }
+
+    public static ArrayList<Entry> selectAll(SQLiteDatabase db)
+    {
+       ArrayList<Entry> results = new ArrayList<Entry>();
+       Cursor c = db.query(TABLE_NAME, null, null, null, null, null, null);
+
+        //check for error
+        if (c != null)
+        {
+            //make sure the cursor is at the start of the list
+            c.moveToFirst();
+            //loop through until we are at the end of the list
+
+            while (!c.isAfterLast())
+            {
+                Entry p = createFromCursor(c);
+                results.add(p);
+                //increment the cursor
+                c.moveToNext();
+            }
+        }
+
+
+        return results;
     }
 }

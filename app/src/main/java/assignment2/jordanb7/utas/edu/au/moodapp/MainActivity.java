@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -25,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,
                 new EntriesFrag()).commit();
+
+
+       // final ArrayList<Entry> properties = EntryTable.selectAll(db);
 
         Entry entry1 = new Entry();
         entry1.setTitle("hello world");
