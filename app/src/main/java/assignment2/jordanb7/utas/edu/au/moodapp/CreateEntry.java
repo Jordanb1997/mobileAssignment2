@@ -50,10 +50,11 @@ public class CreateEntry extends AppCompatActivity {
 
                 date = new DatePickerDialog(CreateEntry.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                    public void onDateSet(DatePicker datePicker, int mday, int dmonth, int myear) {
+
 
                     }
-                },day,month,year);
+                },year,month,day);
                 date.show();
             }
         });
