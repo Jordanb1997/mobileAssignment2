@@ -61,7 +61,7 @@ public class CreateEntry extends AppCompatActivity {
         fin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent m = new Intent(getApplicationContext(), EntriesFrag.class);
+                Intent m = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(m);
             }
         });
