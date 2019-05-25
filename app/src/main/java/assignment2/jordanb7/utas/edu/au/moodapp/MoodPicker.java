@@ -20,7 +20,7 @@ public class MoodPicker extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood_picker);
 
-        final String[] list_items = getResources().getStringArray(R.array.emoji);
+        final String[] list_items = getResources().getStringArray(R.array.mood_items);
         ArrayList<String> items = new ArrayList<>(Arrays.asList(list_items));
 
         final ArrayAdapter<String> myEmojiAdapter = new ArrayAdapter<String>(

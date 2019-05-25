@@ -2,7 +2,8 @@
     <string name="app_name">moodapp</string>
     <string name="title_activity_create_entry">createEntry</string>
 
-    <string-array name="emoji">
+    <string-array name="mood_items">
+        <item>Mood</item>
         <item>Happy</item>
         <item>Angry</item>
         <item>Sad</item>

@@ -19,13 +19,13 @@
             android:hint="Enter Title"
             android:inputType="text" />
 
-        <Button
-            android:id="@+id/date_picker_btn"
-            android:layout_width="106dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:gravity="center"
-            android:text="Date" />
+        <Spinner
+            android:id="@+id/mood"
+            android:layout_width="154dp"
+            android:layout_height="39dp"
+            android:layout_gravity="right"></Spinner>
+
+
 
 
     </FrameLayout>
@@ -69,11 +69,12 @@
             android:text="Gallery" />
 
         <Button
-            android:id="@+id/journal_camera_btn"
-            android:layout_width="116dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/date_picker_btn"
+            android:layout_width="106dp"
+            android:layout_height="match_parent"
             android:layout_gravity="left"
-            android:text="Camera" />
+            android:gravity="center"
+            android:text="Date" />
 
 
     </FrameLayout>
