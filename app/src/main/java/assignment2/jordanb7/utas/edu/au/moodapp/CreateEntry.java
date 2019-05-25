@@ -1,6 +1,7 @@
 package assignment2.jordanb7.utas.edu.au.moodapp;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,9 +37,6 @@ public class CreateEntry extends AppCompatActivity {
 
 
 
-
-
-
         final Button datePicker = findViewById(R.id.date_picker_btn);
         datePicker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,9 +57,14 @@ public class CreateEntry extends AppCompatActivity {
             }
         });
 
-
-
-
+        Button fin = findViewById(R.id.journal_done_btn);
+        fin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent m = new Intent(getApplicationContext(), EntriesFrag.class);
+                startActivity(m);
+            }
+        });
 
 
     }
