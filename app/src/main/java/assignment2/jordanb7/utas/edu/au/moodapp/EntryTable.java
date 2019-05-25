@@ -28,7 +28,7 @@ public class EntryTable {
             p.setEntryID(c.getInt(c.getColumnIndex(KEY_ENTRY_ID)));
             p.setTitle(c.getString(c.getColumnIndex(KEY_TITLE)));
             p.setDate(c.getInt(c.getColumnIndex(KEY_DATE)));
-            //p.setMood(c.getInt(c.getColumnIndex(KEY_MOOD)));
+            p.setMood(c.getString(c.getColumnIndex(KEY_MOOD)));
             return p;
         }
     }
