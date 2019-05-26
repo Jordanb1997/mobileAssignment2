@@ -46,6 +46,7 @@ public class CreateEntry extends AppCompatActivity {
 
                 p.setTitle(title.getText().toString());
                 p.setText(journal.getText().toString());
+
                 EntryTable.insert(db,p);
 
                 Intent m = new Intent(getApplicationContext(), MainActivity.class);
