@@ -29,7 +29,8 @@ public class EntryAdapter extends ArrayAdapter<Entry> {
 
         Entry p = this.getItem(position);
         TextView textView = row.findViewById(android.R.id.text1);
-        textView.setText(p.getEntryID());
+        textView.setText(p.getEntryID()+":"+ p.getDate()+":"+p.getTitle()+":"+p.getMood()+":"+p.getText());
+
         return row;
     }
 }

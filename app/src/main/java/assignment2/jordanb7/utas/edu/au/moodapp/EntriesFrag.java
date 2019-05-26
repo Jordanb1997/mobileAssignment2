@@ -23,8 +23,8 @@ public class EntriesFrag extends Fragment {
 
         final ArrayList<Entry> entries = EntryTable.selectAll(db);
 
-        ListView entriesList = getView().findViewById(R.id.entriesList);
-        EntryAdapter EntryListAdapter = new EntryAdapter(getView().getContext(),android.R.layout.simple_list_item_1,entries);
+        ListView entriesList = fragView.findViewById(R.id.entriesList);
+        EntryAdapter EntryListAdapter = new EntryAdapter(fragView.getContext(),android.R.layout.simple_list_item_1,entries);
         entriesList.setAdapter(EntryListAdapter);
 
         return fragView;
