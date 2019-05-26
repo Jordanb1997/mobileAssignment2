@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/topC"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="lblTitle"/>
+
+        <TextView
+            android:id="@+id/lblMood"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="lblMood"/>
+
+        <TextView
+            android:id="@+id/lblDate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:text="lblDate"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/mid"
+        android:layout_width="match_parent"
+        android:layout_height="441dp"
+        android:layout_below="@+id/topC"
+        android:layout_alignBottom="@+id/topC"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="-448dp">
+
+        <TextView
+            android:id="@+id/lblJournal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+</RelativeLayout>
