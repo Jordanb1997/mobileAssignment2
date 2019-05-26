@@ -3,7 +3,7 @@
     <string name="title_activity_create_entry">createEntry</string>
 
     <string-array name="mood_items">
-        <item>Mood</item>
+        <item></item>
         <item>Happy</item>
         <item>Angry</item>
         <item>Sad</item>

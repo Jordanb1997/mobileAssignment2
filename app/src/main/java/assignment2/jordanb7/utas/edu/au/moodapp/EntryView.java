@@ -8,8 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class EntryView extends AppCompatActivity {
     Button share;
+    Button delete;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,8 @@ public class EntryView extends AppCompatActivity {
             Database databaseConnection = new Database(this);
             final SQLiteDatabase db = databaseConnection.open();
 
+            final ArrayList<Entry> entries = EntryTable.selectAll(db);
+
             Intent a = getIntent();
 
             String m = a.getStringExtra("TITLE");
@@ -26,7 +31,7 @@ public class EntryView extends AppCompatActivity {
             String f = a.getStringExtra("JOURNAL");
             String md = a.getStringExtra("MOOD");
 
-            TextView eTitle = findViewById(R.id.lblTitle);
+            final TextView eTitle = findViewById(R.id.lblTitle);
            // TextView eDate= findViewById(R.id.lblDate);
             TextView ej = findViewById(R.id.lblJournal);
             TextView mm = findViewById(R.id.lblMood);
@@ -41,7 +46,21 @@ public class EntryView extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent b = new Intent(Intent.ACTION_SEND);
                     b.setType("text/plain");
-                    startActivity(b);
+                    startActivity(Intent.createChooser(b,"share"));
+                }
+            });
+
+            delete = findViewById(R.id.delete_btn);
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final Entry p = new Entry();
+
+                    EntryTable.delete(db, p);
+
+                    Intent m = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(m);
+
                 }
             });
 

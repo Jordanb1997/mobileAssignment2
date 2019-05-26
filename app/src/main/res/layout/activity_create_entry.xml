@@ -39,17 +39,17 @@
         <EditText
             android:id="@+id/journal_input"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="624dp"
+            android:background="@android:color/holo_blue_light"
             android:gravity="top|left"
             android:hint="Enter Text"
-            android:inputType="textMultiLine"
-            android:background="@android:color/holo_blue_light"/>
+            android:inputType="textMultiLine" />
     </FrameLayout>
 
     <FrameLayout
         android:id="@+id/journal_option_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/journal_entry_container"
         android:layout_marginTop="-55dp"
         android:background="@android:color/holo_red_dark">
