@@ -47,13 +47,12 @@ public class CreateEntry extends AppCompatActivity {
                 p.setTitle(title.getText().toString());
                 p.setText(journal.getText().toString());
                 EntryTable.insert(db,p);
-                Log.d("sam", title.getText().toString());
-                Log.d("sad", journal.getText().toString());
 
                 Intent m = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(m);
             }
         });
+
 
 
     }

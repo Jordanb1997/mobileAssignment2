@@ -36,14 +36,14 @@ public class MainActivity extends AppCompatActivity {
         entry1.setImage("doge.png");
 
         EntryTable.insert(db, entry1);
-        */
+
         final ArrayList<Entry> entries = EntryTable.selectAll(db);
 
         for(int i = 0; i < entries.size(); i++)
         {
             Entry p = entries.get(i);
             Log.d("sam", p.getEntryID() + ":" + p.getTitle());
-        }
+        }*/
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

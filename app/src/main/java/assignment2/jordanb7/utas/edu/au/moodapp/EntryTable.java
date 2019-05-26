@@ -36,10 +36,10 @@ public class EntryTable {
     public static final String CREATE_STATEMENT = "CREATE TABLE "
             + TABLE_NAME
             + " (" + KEY_ENTRY_ID + " integer primary key autoincrement, "
-            + KEY_TITLE + " string not null, "
-            + KEY_DATE + " int not null, "
-            + KEY_MOOD + " string not null, "
-            + KEY_TEXT + " string not null "
+            + KEY_TITLE + " , "
+            + KEY_DATE + " , "
+            + KEY_MOOD + " , "
+            + KEY_TEXT + " "
             /*+ KEY_IMAGE + " string not null "*/
             +");";
     public static void insert(SQLiteDatabase db, Entry e)
@@ -90,8 +90,5 @@ public class EntryTable {
     public static void delete(SQLiteDatabase db, Entry e)
     {
         db.delete(TABLE_NAME, KEY_ENTRY_ID+"= ?",new String[]{""+e.getEntryID() } );
-
-        //db.update(TABLE_NAME, values, KEY_ENTRY_ID+"= ?",
-          //      new String[]{ ""+e.getEntryID() });
     }
 }
