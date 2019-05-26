@@ -76,6 +76,22 @@ public class EntryTable {
         }
         return results;
     }
+
+    public static Entry getByID(SQLiteDatabase db, int id)
+    {
+        Cursor c = db.query(TABLE_NAME, null, KEY_ENTRY_ID + "=" + id, null, null,
+                null, null);
+
+        c.moveToFirst();
+        return createFromCursor(c);
+
+    }
+
+
+
+
+
+
     public static void update(SQLiteDatabase db, Entry e)
     {
         ContentValues values = new ContentValues();
