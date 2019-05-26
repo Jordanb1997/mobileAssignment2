@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,
                 new EntriesFrag()).commit();
-    /*
+        /*
         Entry entry1 = new Entry();
         entry1.setTitle("hello world");
         entry1.setDate(11021968);
@@ -47,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
             Entry p = entries.get(i);
             Log.d("sam", p.getEntryID() + ":" + p.getTitle());
         }
-
-
-
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
