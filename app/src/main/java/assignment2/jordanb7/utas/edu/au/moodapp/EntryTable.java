@@ -13,7 +13,7 @@ public class EntryTable {
     public static final String KEY_DATE = "date";
     public static final String KEY_MOOD = "mood";
     public static final String KEY_TEXT = "text";
-    public static final String KEY_IMAGE = "image";
+    //public static final String KEY_IMAGE = "image";
 
 
     public static Entry createFromCursor(Cursor c)
@@ -40,7 +40,7 @@ public class EntryTable {
             + KEY_DATE + " int not null, "
             + KEY_MOOD + " string not null, "
             + KEY_TEXT + " string not null, "
-            + KEY_IMAGE + " string not null "
+            /*+ KEY_IMAGE + " string not null "*/
             +");";
     public static void insert(SQLiteDatabase db, Entry e)
     {
@@ -49,7 +49,7 @@ public class EntryTable {
         values.put(KEY_DATE, e.getDate());
         values.put(KEY_MOOD, e.getMood());
         values.put(KEY_TEXT, e.getText());
-        values.put(KEY_IMAGE, e.getImage());
+        //values.put(KEY_IMAGE, e.getImage());
         db.insert(TABLE_NAME, null, values);
     }
 
