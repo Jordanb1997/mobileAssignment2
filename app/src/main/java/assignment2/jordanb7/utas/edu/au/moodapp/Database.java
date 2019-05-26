@@ -13,7 +13,7 @@ public class Database {
     private static final String DATABASE_NAME = "EntryDB";
 
     //The version of the database. Increment this whenever you change the /structure/ of the database
-    private static final int   DATABASE_VERSION   = 2;
+    private static final int   DATABASE_VERSION   = 6;
 
     //The connection to the database itself
     private SQLiteDatabase mDb;
@@ -41,6 +41,7 @@ public class Database {
      */
     private static class DatabaseHelper extends SQLiteOpenHelper
     {
+
         //This constructor creates the database.
         DatabaseHelper(Context context)
         {
@@ -66,5 +67,7 @@ public class Database {
             db.execSQL("DROP TABLE IF EXISTS " + EntryTable.TABLE_NAME);
             onCreate(db); //this will recreate the database as if it were new
         }
+
+
     }
 }

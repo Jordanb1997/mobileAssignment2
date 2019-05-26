@@ -38,17 +38,18 @@ public class MainActivity extends AppCompatActivity {
 
         EntryTable.insert(db, entry1);
 
-
         final ArrayList<Entry> entries = EntryTable.selectAll(db);
+
+        //setContentView(R.layout.frag_entries);
+
         for(int i = 0; i < entries.size(); i++)
         {
             Entry p = entries.get(i);
             Log.d("sam", p.getEntryID() + ":" + p.getTitle());
         }
 
-        ListView entriesList = findViewById(R.id.entriesList);
-        EntryAdapter EntryListAdapter = new EntryAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, entries);
-        entriesList.setAdapter(EntryListAdapter);
+
+
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

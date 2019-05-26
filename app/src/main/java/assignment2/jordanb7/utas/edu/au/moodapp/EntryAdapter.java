@@ -14,6 +14,7 @@ import java.util.List;
 
 public class EntryAdapter extends ArrayAdapter<Entry> {
     private int mLayoutResourceID;
+
     public EntryAdapter (Context context, int resource, List<Entry> objects)
     {
         super(context, resource, objects);
@@ -30,8 +31,5 @@ public class EntryAdapter extends ArrayAdapter<Entry> {
         TextView textView = row.findViewById(android.R.id.text1);
         textView.setText(p.getEntryID());
         return row;
-
-
     }
-
 }
