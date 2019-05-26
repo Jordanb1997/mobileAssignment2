@@ -39,7 +39,7 @@ public class EntryTable {
             + KEY_TITLE + " string not null, "
             + KEY_DATE + " int not null, "
             + KEY_MOOD + " string not null, "
-            + KEY_TEXT + " string not null, "
+            + KEY_TEXT + " string not null "
             /*+ KEY_IMAGE + " string not null "*/
             +");";
     public static void insert(SQLiteDatabase db, Entry e)
@@ -76,6 +76,18 @@ public class EntryTable {
         return results;
     }
     public static void update(SQLiteDatabase db, Entry e)
+    {
+        ContentValues values = new ContentValues();
+        values.put(KEY_ENTRY_ID, e.getEntryID());
+        values.put(KEY_TITLE, e.getTitle());
+        values.put(KEY_DATE, e.getDate());
+        values.put(KEY_MOOD, e.getMood());
+        values.put(KEY_TEXT, e.getText());
+        db.update(TABLE_NAME, values, KEY_ENTRY_ID+"= ?",
+                new String[]{ ""+e.getEntryID() });
+    }
+
+    public static void delete(SQLiteDatabase db, Entry e)
     {
         ContentValues values = new ContentValues();
         values.put(KEY_ENTRY_ID, e.getEntryID());
