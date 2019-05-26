@@ -28,13 +28,8 @@ public class EntryAdapter extends ArrayAdapter<Entry> {
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
 
         Entry p = this.getItem(position);
-
-        TextView lblTitle = row.findViewById(R.id.lbltitle);
-        lblTitle.setText(p.getTitle());
-        TextView lblDate = row.findViewById(R.id.lbldate);
-        lblDate.setText(p.getDate());
-        TextView lblMood = row.findViewById(R.id.lblmood);
-        lblMood.setText(p.getMood());
+        TextView textView = row.findViewById(android.R.id.text1);
+        textView.setText(p.getEntryID()+":"+ p.getDate()+":"+p.getTitle()+":"+p.getMood()+":"+p.getText());
         return row;
     }
 }

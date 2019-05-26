@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,
                 new EntriesFrag()).commit();
-        /*
+
         Entry entry1 = new Entry();
         entry1.setTitle("hello world");
         entry1.setDate(11021968);
@@ -36,10 +36,8 @@ public class MainActivity extends AppCompatActivity {
         entry1.setImage("doge.png");
 
         EntryTable.insert(db, entry1);
-        */
-        final ArrayList<Entry> entries = EntryTable.selectAll(db);
 
-        //setContentView(R.layout.frag_entries);
+        final ArrayList<Entry> entries = EntryTable.selectAll(db);
 
         for(int i = 0; i < entries.size(); i++)
         {
