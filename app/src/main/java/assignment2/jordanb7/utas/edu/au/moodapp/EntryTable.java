@@ -73,8 +73,17 @@ public class EntryTable {
                 c.moveToNext();
             }
         }
-
-
         return results;
+    }
+    public static void update(SQLiteDatabase db, Entry e)
+    {
+        ContentValues values = new ContentValues();
+        values.put(KEY_ENTRY_ID, e.getEntryID());
+        values.put(KEY_TITLE, e.getTitle());
+        values.put(KEY_DATE, e.getDate());
+        values.put(KEY_MOOD, e.getMood());
+        values.put(KEY_TEXT, e.getText());
+        db.update(TABLE_NAME, values, KEY_ENTRY_ID+"= ?",
+                new String[]{ ""+e.getEntryID() });
     }
 }
