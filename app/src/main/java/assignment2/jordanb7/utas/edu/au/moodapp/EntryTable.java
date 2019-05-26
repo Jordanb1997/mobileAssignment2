@@ -86,12 +86,24 @@ public class EntryTable {
         return createFromCursor(c);
 
     }
+    public ArrayList<Entry> selectMoods(SQLiteDatabase db)
+    {
+        ArrayList<Entry> moodList = new ArrayList<>();
 
+        Cursor c = db.rawQuery("select mood from entries", null);
+        c.moveToFirst();
 
-
-
-
-
+        if (c != null)
+        {
+            while (!c.isAfterLast())
+            {
+                Entry p = createFromCursor(c);
+                moodList.add(p);
+                c.moveToNext();
+            }
+        }
+        return moodList;
+    }
     public static void update(SQLiteDatabase db, Entry e)
     {
         ContentValues values = new ContentValues();
