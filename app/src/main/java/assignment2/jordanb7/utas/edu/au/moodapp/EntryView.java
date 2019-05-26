@@ -27,18 +27,19 @@ public class EntryView extends AppCompatActivity {
             Intent a = getIntent();
 
             String m = a.getStringExtra("TITLE");
-            //int d = a.getIntExtra("DATE");;
+            String d = a.getStringExtra("DATE");;
             String f = a.getStringExtra("JOURNAL");
             String md = a.getStringExtra("MOOD");
 
             final TextView eTitle = findViewById(R.id.lblTitle);
-           // TextView eDate= findViewById(R.id.lblDate);
+            TextView eDate= findViewById(R.id.lblDate);
             TextView ej = findViewById(R.id.lblJournal);
             TextView mm = findViewById(R.id.lblMood);
 
             eTitle.setText(m);
             ej.setText(f);
             mm.setText(md);
+            eDate.setText(d);
 
             share = findViewById(R.id.share_btn);
             share.setOnClickListener(new View.OnClickListener() {

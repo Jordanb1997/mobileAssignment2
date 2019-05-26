@@ -43,6 +43,29 @@ public class CreateEntry extends AppCompatActivity {
         moods.setAdapter(adapter);
 
 
+        final Button datePicker = findViewById(R.id.date_picker_btn);
+        datePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cal = Calendar.getInstance();
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+                int month = cal.get(Calendar.MONTH);
+                int year = cal.get(Calendar.YEAR);
+
+                date = new DatePickerDialog(CreateEntry.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int mday, int dmonth, int myear) {
+
+
+                    }
+                },year,month,day);
+                date.show();
+            }
+        });
+
+
+
+
         Button fin = findViewById(R.id.journal_done_btn);
 
         fin.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +78,7 @@ public class CreateEntry extends AppCompatActivity {
                 p.setTitle(title.getText().toString());
                 p.setText(journal.getText().toString());
                 p.setMood(moods.getSelectedItem().toString());
+                p.setDate(date.getDatePicker().getDayOfMonth());
 
                 EntryTable.insert(db,p);
 

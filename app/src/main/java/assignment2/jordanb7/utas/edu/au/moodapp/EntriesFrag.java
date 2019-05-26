@@ -51,7 +51,7 @@ public class EntriesFrag extends Fragment {
                 //startActivity(n);
 
                 expand.putExtra("TITLE", p.getTitle());
-                //expand.putExtra("DATE", p.getDate());
+                expand.putExtra("DATE", p.getDate());
                 expand.putExtra("JOURNAL", p.getText());
                 expand.putExtra("MOOD", p.getMood());
                 startActivity(expand);
