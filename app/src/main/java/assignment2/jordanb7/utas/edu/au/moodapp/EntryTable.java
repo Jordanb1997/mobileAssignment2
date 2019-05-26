@@ -29,6 +29,7 @@ public class EntryTable {
             p.setTitle(c.getString(c.getColumnIndex(KEY_TITLE)));
             p.setDate(c.getInt(c.getColumnIndex(KEY_DATE)));
             p.setMood(c.getString(c.getColumnIndex(KEY_MOOD)));
+            p.setText(c.getString(c.getColumnIndex(KEY_TEXT)));
             return p;
         }
     }
