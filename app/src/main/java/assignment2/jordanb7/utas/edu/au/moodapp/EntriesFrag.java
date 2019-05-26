@@ -27,7 +27,7 @@ public class EntriesFrag extends Fragment {
         for(int i = 0; i < entries.size(); i++)
         {
             Entry p = entries.get(i);
-            Log.d("entryfrag", p.getEntryID() + ":" + p.getTitle());
+            Log.d("entryfrag", p.getEntryID() + ":" + p.getTitle() + ":" + p.getText());
         }
         ListView entriesList = fragView.findViewById(R.id.entriesList);
         EntryAdapter EntryListAdapter = new EntryAdapter(fragView.getContext(),android.R.layout.simple_list_item_1,entries);
