@@ -34,6 +34,7 @@ public class CreateEntry extends AppCompatActivity {
 
         final TextView title = findViewById(R.id.journal_title_input);
 
+        final TextView journal = findViewById(R.id.journal_input);
 
         Button fin = findViewById(R.id.journal_done_btn);
         fin.setOnClickListener(new View.OnClickListener() {
@@ -41,13 +42,13 @@ public class CreateEntry extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                final Entry p = entries.get(i);
+                final Entry p = new Entry();
 
                 p.setTitle(title.getText().toString());
+                p.setText(journal.getText().toString());
                 EntryTable.insert(db,p);
                 Log.d("sam", title.getText().toString());
-
-
+                Log.d("sad", journal.getText().toString());
 
                 Intent m = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(m);
