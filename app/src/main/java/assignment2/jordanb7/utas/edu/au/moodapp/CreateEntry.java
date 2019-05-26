@@ -36,7 +36,18 @@ public class CreateEntry extends AppCompatActivity {
 
         final TextView journal = findViewById(R.id.journal_input);
 
+        final Spinner moods = (Spinner) findViewById(R.id.mood);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.mood_items, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        moods.setAdapter(adapter);
+
+
         Button fin = findViewById(R.id.journal_done_btn);
+
         fin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +57,7 @@ public class CreateEntry extends AppCompatActivity {
 
                 p.setTitle(title.getText().toString());
                 p.setText(journal.getText().toString());
+                p.setMood(moods.getSelectedItem().toString());
 
                 EntryTable.insert(db,p);
 
