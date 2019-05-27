@@ -57,8 +57,8 @@ public class EntryView extends AppCompatActivity {
                 public void onClick(View view) {
                     final Entry p = new Entry();
 
-                    EntryTable.delete(db, p);
-
+                    //EntryTable.delete(db, p);
+                    //EntryTable.delete(db, p);
                     Intent m = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(m);
 

@@ -118,6 +118,8 @@ public class EntryTable {
 
     public static void delete(SQLiteDatabase db, Entry e)
     {
-        db.delete(TABLE_NAME, KEY_ENTRY_ID+"= ?",new String[]{""+e.getEntryID() } );
+        int id = e.getEntryID();
+        String strid = String.valueOf(id);
+        db.execSQL("DELETE FROM entries WHERE _id = '" + strid + "'");
     }
 }

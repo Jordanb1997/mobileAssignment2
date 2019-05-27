@@ -64,7 +64,6 @@ public class CreateEntry extends AppCompatActivity {
                 },year,month,day);
                 date.show();
 
-
                 SimpleDateFormat formatted = new SimpleDateFormat("dd MM yyyy");
                 strDate = formatted.format(cal.getTime());
 
