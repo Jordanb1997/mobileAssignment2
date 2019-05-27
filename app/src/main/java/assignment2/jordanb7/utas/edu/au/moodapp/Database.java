@@ -13,7 +13,7 @@ public class Database {
     private static final String DATABASE_NAME = "EntryDB";
 
     //The version of the database. Increment this whenever you change the /structure/ of the database
-    private static final int   DATABASE_VERSION   = 19;
+    private static final int   DATABASE_VERSION   = 24;
 
     //The connection to the database itself
     private SQLiteDatabase mDb;
@@ -57,7 +57,6 @@ public class Database {
             Log.d(TAG, "DatabaseHelper onCreate");
 
             db.execSQL(EntryTable.CREATE_STATEMENT);
-
         }
 
         //This code is called if the version number changes

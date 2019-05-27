@@ -13,14 +13,18 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class CreateEntry extends AppCompatActivity {
     Calendar cal;
     DatePickerDialog date;
+    String strDate;
     int i;
-
+    boolean dateSelected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,14 +56,19 @@ public class CreateEntry extends AppCompatActivity {
                 int month = cal.get(Calendar.MONTH);
                 int year = cal.get(Calendar.YEAR);
 
+
                 date = new DatePickerDialog(CreateEntry.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int mday, int dmonth, int myear) {
-
-
                     }
                 },year,month,day);
                 date.show();
+
+
+                SimpleDateFormat formatted = new SimpleDateFormat("dd MM yyyy");
+                strDate = formatted.format(cal.getTime());
+
+                dateSelected = true;
             }
         });
 
@@ -78,8 +87,16 @@ public class CreateEntry extends AppCompatActivity {
                 p.setTitle(title.getText().toString());
                 p.setText(journal.getText().toString());
                 p.setMood(moods.getSelectedItem().toString());
-                p.setDate(date.getDatePicker().getDayOfMonth());
+                if(dateSelected == false )
+                {
+                    DateFormat df = new SimpleDateFormat("dd MM yyyy, HH:mm");
+                    String currentDate = df.format(Calendar.getInstance().getTime());
+                    p.setDate(currentDate);
+                }
+                else {
 
+                    p.setDate(strDate);
+                }
                 EntryTable.insert(db,p);
 
                 Intent m = new Intent(getApplicationContext(), MainActivity.class);

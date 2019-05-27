@@ -3,7 +3,7 @@ package assignment2.jordanb7.utas.edu.au.moodapp;
 public class Entry {
     private int mEntryID;
     private String mTitle;
-    private int mDate;
+    private String mDate;
     private String mMood;
     private String mText;
     private String mImage;
@@ -14,8 +14,8 @@ public class Entry {
     public String getTitle() { return mTitle; }
     public void setTitle(String s) { this.mTitle= s; }
 
-    public int getDate() { return mDate; }
-    public void setDate(int s) { this.mDate= s; }
+    public String getDate() { return mDate; }
+    public void setDate(String s) { this.mDate= s; }
 
     public String getMood() { return mMood; }
     public void setMood(String s) { this.mMood= s; }
