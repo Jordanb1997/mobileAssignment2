@@ -20,19 +20,14 @@
         android:layout_width="114dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/entry_btn"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="153dp"
-        android:layout_marginLeft="153dp"
-        android:layout_marginTop="198dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginRight="144dp"
+        android:layout_marginEnd="-119dp"
+        android:layout_marginRight="-119dp"
         android:layout_marginBottom="24dp"
+        android:layout_toStartOf="@+id/mood_btn"
+        android:layout_toLeftOf="@+id/mood_btn"
         android:background="@color/colorPrimaryDark"
         android:text="Journal" />
+
 
     <Button
         android:id="@+id/entry_btn"
